@@ -1,14 +1,15 @@
 {
   "name": "yj-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "yj脚手架",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Threehero",
-  "license": "ISC",
+  "repository": "https://github.com/ThreeHero/yj-cli.git",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^8.47.0",
     "husky": "^8.0.3"
