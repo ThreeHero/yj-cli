@@ -1,4 +1,4 @@
-const { reactRepo, vueRepo } = require('./utils/constants')
+const { owner, gitRepoNames } = require('./utils/constants')
 const download = require('download-git-repo')
 const inquirer = require('inquirer')
 const ora = require('ora')
@@ -16,14 +16,8 @@ module.exports = async projectName => {
     }
   ])
 
-  let repo = null
-  if (framework === 'react') {
-    repo = reactRepo
-  } else if (framework === 'vue') {
-    repo = vueRepo
-  }
   // 下载模板 选择
-  download(`github:${repo.owner}/${repo.name}`, projectName, null, err => {
+  download(`github:${owner}/${gitRepoNames[framework]}`, projectName, null, err => {
     const spinner = ora('正在创建...')
     // 下载成功
     spinner.start()
