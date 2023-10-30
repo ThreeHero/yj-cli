@@ -11,7 +11,7 @@ module.exports = async projectName => {
     {
       name: 'framework',
       type: 'list',
-      choices: ['vue', 'react'],
+      choices: ['vue', 'react', 'springboot'],
       message: '请选择框架：'
     }
   ])
@@ -22,12 +22,12 @@ module.exports = async projectName => {
     // 下载成功
     spinner.start()
     if (err) {
-      spinner.fail()
       // 下载失败
       console.log(logSymbols.error, chalk.red(`创建失败${err}`))
+      spinner.fail()
     } else {
-      spinner.succeed()
       console.log(logSymbols.success, chalk.green('项目初始化完成'))
+      spinner.succeed()
     }
   })
 }

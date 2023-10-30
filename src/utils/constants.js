@@ -4,18 +4,8 @@ const owner = 'ThreeHero'
 
 const gitRepoNames = {
   vue: 'yj-template-vue',
-  react: 'yj-template'
-}
-const reactRepo = {
-  owner: 'ThreeHero',
-  name: 'yj-template',
-  address: 'https://github.com/ThreeHero/yj-template.git'
-}
-
-const vueRepo = {
-  owner: 'ThreeHero',
-  name: 'yj-template-vue',
-  address: 'https://github.com/ThreeHero/yj-template-vue.git'
+  react: 'yj-template',
+  springboot: 'yj-template-springboot'
 }
 
 module.exports = {
