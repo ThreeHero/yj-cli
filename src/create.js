@@ -1,4 +1,4 @@
-const { owner, gitRepoNames } = require('./utils/constants')
+const { owner, gitRepoNames, templates } = require('./utils/constants')
 const download = require('download-git-repo')
 const inquirer = require('inquirer')
 const ora = require('ora')
@@ -11,7 +11,7 @@ module.exports = async projectName => {
     {
       name: 'framework',
       type: 'list',
-      choices: ['vue', 'react', 'springboot'],
+      choices: templates,
       message: '请选择框架：'
     }
   ])
@@ -23,11 +23,12 @@ module.exports = async projectName => {
     spinner.start()
     if (err) {
       // 下载失败
-      console.log(logSymbols.error, chalk.red(`创建失败${err}`))
       spinner.fail()
+      console.log(logSymbols.error, chalk.red(`创建失败${err}`))
     } else {
-      console.log(logSymbols.success, chalk.green('项目初始化完成'))
       spinner.succeed()
+      console.log(logSymbols.success, chalk.green('项目初始化完成'))
+      console.log(logSymbols.success, chalk.green('请您亲自安装需要的环境'))
     }
   })
 }
